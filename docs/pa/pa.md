@@ -1,7 +1,3 @@
-Perfeito! A substituição por **Python/Django REST Framework** e o foco na **AWS** são escolhas excelentes, pois alinham a disciplina com um dos ecossistemas mais populares e demandados do mercado para Ciência de Dados.
-
-Segue o plano de ensino reelaborado com essas especificações.
-
 ---
 
 ### **PLANO DE ENSINO (REELABORADO - PYTHON/DJANGO & AWS)**
