@@ -10,7 +10,8 @@ nav:
       - Aulas: Disciplina/aulas.md
       - Ambiente: Disciplina/ambiente.md
       - Roteiro:
-        - Aws: Disciplina/roteiros/aws.md
+        - AWS: Disciplina/roteiros/02 - aws.md
+        - EC2: Disciplina/roteiros/04 - ec2.md
       #- Notebook:
         #- Index: Disciplina/notebook/index.md
         #- Notebook 1: Disciplina/notebook/notebook1.md
@@ -19,7 +20,7 @@ nav:
   - Avaliações:
       - AP1: Avalia/ap1.md
       - AP2: Avalia/ap2.md
-      - AS: Avalia/as.md
+      #- AS: Avalia/as.md
       - AC:
         - Index: Avalia/index.md
         - AC1: Avalia/AC01.md
