@@ -6,7 +6,7 @@ Organize em pastas para cada AC e adicione o professor como colaborador no repos
 
 AC 01 - 25/03/2026
 
-AC 02 - 25/03/2026
+AC 02 - 08/04/2026
 
 AC 03 - 22/04/2026
 
