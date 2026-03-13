@@ -2,3 +2,8 @@
 /site
 
 /.vscode
+/services
+/__pycache__/
+*.pyc
+/services/s3api_local/db.sqlite3
+/services/s3api_local/.env
