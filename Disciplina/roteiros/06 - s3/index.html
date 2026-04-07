@@ -22,7 +22,7 @@
     
     
       
-        <title>06 - S3 - BDCC_26.1_8001</title>
+        <title>S3 - BDCC_26.1_8001</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              06 - S3
+              S3
             
           </span>
         </div>
@@ -653,8 +653,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -687,8 +685,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -697,6 +693,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#roteiro-basico-criacao-de-bucket-s3-na-aws-e-envio-de-fotos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roteiro Básico: Criação de Bucket S3 na AWS e Envio de Fotos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Roteiro Básico: Criação de Bucket S3 na AWS e Envio de Fotos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#1-criar-um-bucket-s3" class="md-nav__link">
     <span class="md-ellipsis">
       1. Criar um Bucket S3
@@ -704,13 +710,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-configurar-permissoes-opcional" class="md-nav__link">
     <span class="md-ellipsis">
       2. Configurar Permissões (opcional)
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -721,9 +732,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="3. Enviar Fotos pelo Console">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#4-enviar-fotos-via-aws-cli" class="md-nav__link">
     <span class="md-ellipsis">
       4. Enviar Fotos via AWS CLI
@@ -742,10 +754,24 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#como-logar-no-aws-cli-para-configurar-o-aws-cli-siga-os-passos-abaixo" class="md-nav__link">
     <span class="md-ellipsis">
       Como logar no aws cli? Para configurar o AWS CLI, siga os passos abaixo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-enviar-fotos-via-codigo-python-boto3" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Enviar Fotos via Código Python (boto3)
     </span>
   </a>
   
@@ -757,9 +783,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-enviar-fotos-via-codigo-python-boto3" class="md-nav__link">
+  <a href="#pip-install-boto3" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Enviar Fotos via Código Python (boto3)
+      pip install boto3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#certifique-se-de-que-suas-credenciais-aws-estao-configuradas-aws-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certifique-se de que suas credenciais AWS estão configuradas (aws configure)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-7-executar-o-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 7: Executar o upload
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-9-funcao-adicional-para-listar-arquivos-no-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 9: Função adicional para listar arquivos no bucket
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-10-funcao-para-definir-metadados-da-foto-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 10: Função para definir metadados da foto (opcional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-uso-com-metadados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de uso com metadados
     </span>
   </a>
   
@@ -1149,8 +1220,8 @@
   
 
 
-<h1 id="roteiro-basico-criacao-de-bucket-s3-na-aws-e-envio-de-fotos">Roteiro Básico: Criação de Bucket S3 na AWS e Envio de Fotos<a class="headerlink" href="#roteiro-basico-criacao-de-bucket-s3-na-aws-e-envio-de-fotos" title="Permanent link">&para;</a></h1>
-<h2 id="1-criar-um-bucket-s3">1. Criar um Bucket S3<a class="headerlink" href="#1-criar-um-bucket-s3" title="Permanent link">&para;</a></h2>
+<h3 id="roteiro-basico-criacao-de-bucket-s3-na-aws-e-envio-de-fotos">Roteiro Básico: Criação de Bucket S3 na AWS e Envio de Fotos<a class="headerlink" href="#roteiro-basico-criacao-de-bucket-s3-na-aws-e-envio-de-fotos" title="Permanent link">&para;</a></h3>
+<h4 id="1-criar-um-bucket-s3">1. Criar um Bucket S3<a class="headerlink" href="#1-criar-um-bucket-s3" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Acesse o <a href="https://console.aws.amazon.com/">AWS Management Console</a>.</li>
 <li>Procure por <strong>S3</strong> e clique em <strong>Create bucket</strong>.</li>
@@ -1158,7 +1229,7 @@
 <li>Mantenha as configurações padrão ou ajuste conforme necessário.</li>
 <li>Clique em <strong>Create bucket</strong>.</li>
 </ol>
-<h2 id="2-configurar-permissoes-opcional">2. Configurar Permissões (opcional)<a class="headerlink" href="#2-configurar-permissoes-opcional" title="Permanent link">&para;</a></h2>
+<h4 id="2-configurar-permissoes-opcional">2. Configurar Permissões (opcional)<a class="headerlink" href="#2-configurar-permissoes-opcional" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Para acesso público, ajuste as permissões em <strong>Permissions &gt; Bucket Policy</strong>.</li>
 <li>Para acesso privado, mantenha as configurações padrão.</li>
@@ -1173,8 +1244,8 @@
 <li>Clique em <strong>Upload</strong>.</li>
 <li>Selecione as fotos desejadas e clique em <strong>Upload</strong>.</li>
 </ol>
-<h2 id="4-enviar-fotos-via-aws-cli">4. Enviar Fotos via AWS CLI<a class="headerlink" href="#4-enviar-fotos-via-aws-cli" title="Permanent link">&para;</a></h2>
-<h3 id="como-instalar-o-aws-cli-para-instalar-o-aws-cli-siga-as-instrucoes-abaixo">Como instalar o aws cli? Para instalar o AWS CLI, siga as instruções abaixo:<a class="headerlink" href="#como-instalar-o-aws-cli-para-instalar-o-aws-cli-siga-as-instrucoes-abaixo" title="Permanent link">&para;</a></h3>
+<h4 id="4-enviar-fotos-via-aws-cli">4. Enviar Fotos via AWS CLI<a class="headerlink" href="#4-enviar-fotos-via-aws-cli" title="Permanent link">&para;</a></h4>
+<h5 id="como-instalar-o-aws-cli-para-instalar-o-aws-cli-siga-as-instrucoes-abaixo">Como instalar o aws cli? Para instalar o AWS CLI, siga as instruções abaixo:<a class="headerlink" href="#como-instalar-o-aws-cli-para-instalar-o-aws-cli-siga-as-instrucoes-abaixo" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>Windows</strong>: Baixe o instalador MSI do AWS CLI <a href="https://awscli.amazonaws.com/AWSCLIV2.msi">aqui</a> e execute-o.</li>
 <li><strong>macOS</strong>: Use o Homebrew para instalar o AWS CLI:</li>
@@ -1186,7 +1257,7 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>unzip<span class="w"> </span>awscliv2.zip<span class="w">  </span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo<span class="w"> </span>./aws/install
 </span></code></pre></div>
-<h3 id="como-logar-no-aws-cli-para-configurar-o-aws-cli-siga-os-passos-abaixo">Como logar no aws cli? Para configurar o AWS CLI, siga os passos abaixo:<a class="headerlink" href="#como-logar-no-aws-cli-para-configurar-o-aws-cli-siga-os-passos-abaixo" title="Permanent link">&para;</a></h3>
+<h4 id="como-logar-no-aws-cli-para-configurar-o-aws-cli-siga-os-passos-abaixo">Como logar no aws cli? Para configurar o AWS CLI, siga os passos abaixo:<a class="headerlink" href="#como-logar-no-aws-cli-para-configurar-o-aws-cli-siga-os-passos-abaixo" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p><strong>Configure suas credenciais AWS</strong>:
@@ -1223,31 +1294,49 @@
 </blockquote>
 <ol>
 <li>Envie uma foto:
-    <div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>caminho/da/foto.jpg<span class="w"> </span>s3://nome-do-bucket/
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>caminho/da/foto.jpg<span class="w"> </span>s3://nome-do-bucket/
 </span></code></pre></div></li>
 </ol>
-<h2 id="5-enviar-fotos-via-codigo-python-boto3">5. Enviar Fotos via Código Python (boto3)<a class="headerlink" href="#5-enviar-fotos-via-codigo-python-boto3" title="Permanent link">&para;</a></h2>
-<h1 id="passo-1-instalar-o-boto3-execute-no-terminal">Passo 1: Instalar o boto3 (execute no terminal)<a class="headerlink" href="#passo-1-instalar-o-boto3-execute-no-terminal" title="Permanent link">&para;</a></h1>
+<h4 id="5-enviar-fotos-via-codigo-python-boto3">5. Enviar Fotos via Código Python (boto3)<a class="headerlink" href="#5-enviar-fotos-via-codigo-python-boto3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Passo 1: Instalar o boto3 (execute no terminal)
+````sh</li>
+</ul>
 <h1 id="pip-install-boto3">pip install boto3<a class="headerlink" href="#pip-install-boto3" title="Permanent link">&para;</a></h1>
-<h1 id="passo-2-importar-as-bibliotecas-necessarias">Passo 2: Importar as bibliotecas necessárias<a class="headerlink" href="#passo-2-importar-as-bibliotecas-necessarias" title="Permanent link">&para;</a></h1>
-<p>import boto3
+<p>```</p>
+<ul>
+<li>Passo 2: Importar as bibliotecas necessárias</li>
+</ul>
+<p><code>python
+import boto3
 from botocore.exceptions import NoCredentialsError, ClientError
-import os</p>
-<h1 id="passo-3-configurar-o-cliente-s3">Passo 3: Configurar o cliente S3<a class="headerlink" href="#passo-3-configurar-o-cliente-s3" title="Permanent link">&para;</a></h1>
+import os</code>
+- Passo 3: Configurar o cliente S3</p>
+<p>```python</p>
 <h1 id="certifique-se-de-que-suas-credenciais-aws-estao-configuradas-aws-configure">Certifique-se de que suas credenciais AWS estão configuradas (aws configure)<a class="headerlink" href="#certifique-se-de-que-suas-credenciais-aws-estao-configuradas-aws-configure" title="Permanent link">&para;</a></h1>
-<p>s3_client = boto3.client('s3')</p>
-<h1 id="passo-4-definir-as-variaveis-do-bucket-e-arquivo">Passo 4: Definir as variáveis do bucket e arquivo<a class="headerlink" href="#passo-4-definir-as-variaveis-do-bucket-e-arquivo" title="Permanent link">&para;</a></h1>
-<p>bucket_name = 'nome-do-seu-bucket'  # Substitua pelo nome do seu bucket
+<p>s3_client = boto3.client('s3')
+```</p>
+<ul>
+<li>Passo 4: Definir as variáveis do bucket e arquivo</li>
+</ul>
+<p><code>python
+bucket_name = 'nome-do-seu-bucket'  # Substitua pelo nome do seu bucket
 local_file_path = 'caminho/para/sua/foto.jpg'  # Caminho local da foto
-s3_file_name = 'fotos/minha-foto.jpg'  # Nome que o arquivo terá no S3</p>
-<h1 id="passo-5-funcao-para-verificar-se-o-arquivo-existe-localmente">Passo 5: Função para verificar se o arquivo existe localmente<a class="headerlink" href="#passo-5-funcao-para-verificar-se-o-arquivo-existe-localmente" title="Permanent link">&para;</a></h1>
-<p>def verificar_arquivo_existe(caminho_arquivo):
+s3_file_name = 'fotos/minha-foto.jpg'  # Nome que o arquivo terá no S3</code></p>
+<ul>
+<li>Passo 5: Função para verificar se o arquivo existe localmente</li>
+</ul>
+<p><code>`python
+def verificar_arquivo_existe(caminho_arquivo):
     if not os.path.exists(caminho_arquivo):
         print(f"Erro: O arquivo {caminho_arquivo} não foi encontrado.")
         return False
-    return True</p>
-<h1 id="passo-6-funcao-para-fazer-upload-da-foto">Passo 6: Função para fazer upload da foto<a class="headerlink" href="#passo-6-funcao-para-fazer-upload-da-foto" title="Permanent link">&para;</a></h1>
-<p>def enviar_foto_s3(arquivo_local, bucket, nome_s3):
+    return True</code></p>
+<ul>
+<li>Passo 6: Função para fazer upload da foto</li>
+</ul>
+<p>```python
+def enviar_foto_s3(arquivo_local, bucket, nome_s3):
     try:
         # Verificar se o arquivo existe
         if not verificar_arquivo_existe(arquivo_local):
@@ -1313,13 +1402,16 @@ except Exception as e:
     'photographer': 'João Silva',
     'location': 'São Paulo',
     'date': '2024-01-15'
-}</p>
-<h1 id="enviar_foto_com_metadadosminha_fotojpg-bucket_name-fotosminha_fotojpg-metadados_exemplo">enviar_foto_com_metadados('minha_foto.jpg', bucket_name, 'fotos/minha_foto.jpg', metadados_exemplo)<a class="headerlink" href="#enviar_foto_com_metadadosminha_fotojpg-bucket_name-fotosminha_fotojpg-metadados_exemplo" title="Permanent link">&para;</a></h1>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">boto3</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">s3</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span><span class="s1">&#39;caminho/da/foto.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;nome-do-bucket&#39;</span><span class="p">,</span> <span class="s1">&#39;foto.jpg&#39;</span><span class="p">)</span>
-</span></code></pre></div>
+}
+```</p>
+<ul>
+<li>Enviar_foto_com_metadados('minha_foto.jpg', bucket_name, 'fotos/minha_foto.jpg', metadados_exemplo)</li>
+</ul>
+<p>```python
+import boto3</p>
+<p>s3 = boto3.client('s3')
+s3.upload_file('caminho/da/foto.jpg', 'nome-do-bucket', 'foto.jpg')
+```</p>
 <blockquote>
 <p><strong>Dica:</strong> Nunca compartilhe suas credenciais AWS.</p>
 </blockquote>
@@ -1329,6 +1421,9 @@ except Exception as e:
 
 
 
+
+  
+  
 
 
 

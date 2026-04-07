@@ -22,7 +22,7 @@
     
     
       
-        <title>05 - Nginx - BDCC_26.1_8001</title>
+        <title>Nginx - BDCC_26.1_8001</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              05 - Nginx
+              Nginx
             
           </span>
         </div>
@@ -630,8 +630,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -664,8 +662,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -674,6 +670,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#site-com-nginx-na-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Site com nginx na EC2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Site com nginx na EC2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#1-criarusar-a-instancia-ec2" class="md-nav__link">
     <span class="md-ellipsis">
       1. Criar/usar a instância EC2
@@ -681,8 +687,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-instalar-e-iniciar-nginx" class="md-nav__link">
     <span class="md-ellipsis">
       2. Instalar e iniciar Nginx
@@ -690,8 +696,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#3-criar-pasta-do-site-e-permissoes" class="md-nav__link">
     <span class="md-ellipsis">
       3. Criar pasta do site e permissões
@@ -699,8 +705,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#4-subir-seus-arquivos-htmlcssjs" class="md-nav__link">
     <span class="md-ellipsis">
       4. Subir seus arquivos HTML/CSS/JS
@@ -708,8 +714,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#5-configurar-virtual-host-no-nginx" class="md-nav__link">
     <span class="md-ellipsis">
       5. Configurar virtual host no Nginx
@@ -717,8 +723,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#6-testar-no-navegador" class="md-nav__link">
     <span class="md-ellipsis">
       6. Testar no navegador
@@ -726,13 +732,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#7-opcional-recomendado-dominio-https" class="md-nav__link">
     <span class="md-ellipsis">
       7. (Opcional, recomendado) Domínio + HTTPS
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1143,9 +1154,11 @@
   
 
 
-<h1 id="site-com-nginx-na-ec2">Site com nginx na EC2<a class="headerlink" href="#site-com-nginx-na-ec2" title="Permanent link">&para;</a></h1>
+  <h1>05 - Nginx</h1>
+
+<h3 id="site-com-nginx-na-ec2">Site com nginx na EC2<a class="headerlink" href="#site-com-nginx-na-ec2" title="Permanent link">&para;</a></h3>
 <p>Roteiro para sair de uma instância EC2 limpa até o site HTML/CSS/JS no ar com Nginx, incluindo segurança mínima e comando de publicação.</p>
-<h3 id="1-criarusar-a-instancia-ec2">1. Criar/usar a instância EC2<a class="headerlink" href="#1-criarusar-a-instancia-ec2" title="Permanent link">&para;</a></h3>
+<h4 id="1-criarusar-a-instancia-ec2">1. Criar/usar a instância EC2<a class="headerlink" href="#1-criarusar-a-instancia-ec2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>AMI: Amazon Linux (2 ou 2023).</li>
 <li>Tipo: t2.micro/t3.micro (se couber no Free Tier).</li>
@@ -1159,7 +1172,7 @@
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>sua-chave.pem<span class="w"> </span>ec2-user@SEU_IP_PUBLICO
 </span></code></pre></div>
-<h3 id="2-instalar-e-iniciar-nginx">2. Instalar e iniciar Nginx<a class="headerlink" href="#2-instalar-e-iniciar-nginx" title="Permanent link">&para;</a></h3>
+<h4 id="2-instalar-e-iniciar-nginx">2. Instalar e iniciar Nginx<a class="headerlink" href="#2-instalar-e-iniciar-nginx" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Amazon Linux 2:</li>
 </ul>
@@ -1175,21 +1188,21 @@
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nginx
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
 </span></code></pre></div>
-<h3 id="3-criar-pasta-do-site-e-permissoes">3. Criar pasta do site e permissões<a class="headerlink" href="#3-criar-pasta-do-site-e-permissoes" title="Permanent link">&para;</a></h3>
+<h4 id="3-criar-pasta-do-site-e-permissoes">3. Criar pasta do site e permissões<a class="headerlink" href="#3-criar-pasta-do-site-e-permissoes" title="Permanent link">&para;</a></h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/meusite
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>ec2-user:ec2-user<span class="w"> </span>/var/www/meusite
 </span></code></pre></div>
-<h3 id="4-subir-seus-arquivos-htmlcssjs">4. Subir seus arquivos HTML/CSS/JS<a class="headerlink" href="#4-subir-seus-arquivos-htmlcssjs" title="Permanent link">&para;</a></h3>
+<h4 id="4-subir-seus-arquivos-htmlcssjs">4. Subir seus arquivos HTML/CSS/JS<a class="headerlink" href="#4-subir-seus-arquivos-htmlcssjs" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Do seu computador para a EC2 (exemplo com scp):</li>
 </ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>scp<span class="w"> </span>-i<span class="w"> </span>sua-chave.pem<span class="w"> </span>-r<span class="w"> </span>./seu-projeto/*<span class="w"> </span>ec2-user@SEU_IP_PUBLICO:/var/www/meusite/
 </span></code></pre></div>
-<h3 id="5-configurar-virtual-host-no-nginx">5. Configurar virtual host no Nginx<a class="headerlink" href="#5-configurar-virtual-host-no-nginx" title="Permanent link">&para;</a></h3>
+<h4 id="5-configurar-virtual-host-no-nginx">5. Configurar virtual host no Nginx<a class="headerlink" href="#5-configurar-virtual-host-no-nginx" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Criar arquivo de configuração:</li>
 </ul>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/nginx/conf.d/meusite.conf<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/nginx/conf.d/meusite.conf<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="s">server {</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="s">    listen 80;</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="s">    server_name _;</span>
@@ -1208,18 +1221,20 @@
 </span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="s">}</span>
 </span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="s">EOF</span>
 </span></code></pre></div>
-- Validar e recarregar:
+<ul>
+<li>Validar e recarregar:</li>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx
-</span></code></pre></div></p>
-<h3 id="6-testar-no-navegador">6. Testar no navegador<a class="headerlink" href="#6-testar-no-navegador" title="Permanent link">&para;</a></h3>
+</span></code></pre></div>
+<h4 id="6-testar-no-navegador">6. Testar no navegador<a class="headerlink" href="#6-testar-no-navegador" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Acesse:</li>
 </ul>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>http://SEU_IP_PUBLICO
 </span></code></pre></div>
 - Se não abrir, revise Security Group (porta 80) e status do Nginx.</p>
-<h3 id="7-opcional-recomendado-dominio-https">7. (Opcional, recomendado) Domínio + HTTPS<a class="headerlink" href="#7-opcional-recomendado-dominio-https" title="Permanent link">&para;</a></h3>
+<h4 id="7-opcional-recomendado-dominio-https">7. (Opcional, recomendado) Domínio + HTTPS<a class="headerlink" href="#7-opcional-recomendado-dominio-https" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Aponte DNS (A record) para o IP da EC2.</li>
 <li>Instale Certbot e emita certificado LetsEncrypt.</li>
@@ -1239,6 +1254,9 @@
 
 
 
+
+  
+  
 
 
 
