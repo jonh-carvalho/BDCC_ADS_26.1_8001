@@ -1,8 +1,9 @@
-### **Tutorial Prático: Linha de Comando Linux para Iniciantes — Do Zero ao Controle do Sistema**
+### **Linux para Iniciantes** — Do Zero ao Controle do Sistema**
 
-**Objetivo:** Ao final deste roteiro, o aluno será capaz de navegar e operar um sistema Linux pela linha de comando (Bash), realizando tarefas essenciais de administração: gerenciar serviços, monitorar recursos, manipular arquivos e disco, instalar pacotes e aplicar configurações básicas de rede e segurança.
+**Objetivo:** Ao final deste roteiro, o aluno deve ser capaz de navegar e operar um sistema Linux pela linha de comando (Bash), realizando tarefas essenciais de administração: gerenciar serviços, monitorar recursos, manipular arquivos e disco, instalar pacotes e aplicar configurações básicas de rede e segurança.
 
 **Pré-requisitos:**
+
 - Uma instância EC2 Amazon Linux 2023 (kernel 6.1) em execução (ou qualquer distribuição Linux com `systemd`, como Ubuntu 22.04).
 - Acesso ao terminal via SSH (conforme o roteiro anterior — EC2).
 - Sem experiência prévia em linha de comando necessária.
@@ -10,13 +11,11 @@
 !!! tip "Dica"
     Todos os comandos deste roteiro devem ser executados no terminal Linux da sua instância EC2. Cada seção pode ser praticada de forma independente.
 
----
-
-## Parte 1 — Gerenciamento de Sistema e Serviços
+### **Parte 1 —** Gerenciamento de Sistema e Serviços
 
 Os sistemas Linux modernos utilizam o `systemd` para controlar todos os serviços em execução (servidores web, banco de dados, SSH, etc.). O comando central é o `systemctl`.
 
-### 1.1 Conceitos fundamentais
+#### 1.1 Conceitos fundamentais
 
 | Conceito | Descrição |
 |---|---|
@@ -24,7 +23,7 @@ Os sistemas Linux modernos utilizam o `systemd` para controlar todos os serviço
 | **Unit file** | Arquivo de configuração que descreve um serviço para o `systemd`. |
 | **Status** | Estado atual do serviço: `active (running)`, `inactive`, `failed`. |
 
-### 1.2 Verificando o sistema
+#### 1.2 Verificando o sistema
 
 ```bash
 # Exibe informações da distribuição Linux instalada
@@ -71,7 +70,7 @@ sudo systemctl enable sshd
 sudo systemctl disable sshd
 ```
 
-### 1.4 Exercício prático — Instalar e gerenciar o servidor web Nginx
+#### 1.4 **Exercício prático** — Instalar e gerenciar o servidor web Nginx
 
 ```bash
 # 1. Instala o Nginx (Amazon Linux 2023)
@@ -95,11 +94,11 @@ curl http://localhost
 
 ---
 
-## Parte 2 — Monitoramento de Recursos
+### Parte 2 — Monitoramento de Recursos
 
 Saber o que está consumindo CPU, memória e disco é essencial para diagnosticar lentidão e planejar capacidade.
 
-### 2.1 Monitoramento de CPU e memória
+#### 2.1 Monitoramento de CPU e memória
 
 ```bash
 # Exibe processos em tempo real (pressione 'q' para sair)
@@ -121,7 +120,7 @@ ps aux --sort=-%cpu | head -11
 ps aux --sort=-%mem | head -11
 ```
 
-### 2.2 Monitoramento de disco e I/O
+#### 2.2 Monitoramento de disco e I/O
 
 ```bash
 # Exibe uso de disco por partição (human-readable)
@@ -138,7 +137,7 @@ du -sh /var/log/* | sort -rh | head -10
 iostat -x 1 5
 ```
 
-### 2.3 Monitoramento em tempo real com `watch`
+#### 2.3 Monitoramento em tempo real com `watch`
 
 O comando `watch` executa qualquer outro comando repetidamente em intervalos fixos.
 
@@ -150,7 +149,7 @@ watch -n 2 df -h
 watch -n 5 'ps aux | wc -l'
 ```
 
-### 2.4 Verificando logs do sistema
+#### 2.4 Verificando logs do sistema
 
 ```bash
 # Exibe os logs do sistema em tempo real (pressione Ctrl+C para sair)
@@ -169,11 +168,9 @@ sudo journalctl -u sshd -n 50
 !!! info "Dica de diagnóstico"
     Quando um serviço falha, o primeiro passo é sempre verificar seu log com `journalctl -u nome-do-servico --since "10 minutes ago"`.
 
----
+### **Parte 3** — Gerenciamento de Arquivos e Disco
 
-## Parte 3 — Gerenciamento de Arquivos e Disco
-
-### 3.1 Navegação no sistema de arquivos
+#### 3.1 Navegação no sistema de arquivos
 
 ```bash
 # Exibe o diretório atual
@@ -195,7 +192,7 @@ cd ..
 tree /etc -L 2
 ```
 
-### 3.2 Operações com arquivos e diretórios
+#### 3.2 Operações com arquivos e diretórios
 
 ```bash
 # Cria um diretório
@@ -232,7 +229,7 @@ rm -rf ~/projetos/app/logs
 !!! warning "Atenção"
     O comando `rm -rf` é irreversível. Não há lixeira no terminal Linux. Sempre confirme o caminho antes de executar.
 
-### 3.3 Busca de arquivos
+#### 3.3 Busca de arquivos
 
 ```bash
 # Encontra arquivos por nome (busca a partir da raiz)
@@ -251,7 +248,7 @@ grep -r "error" /var/log/nginx/
 sudo journalctl -u sshd | grep -i "failed"
 ```
 
-### 3.4 Gerenciamento de partições e disco
+#### 3.4 Gerenciamento de partições e disco
 
 ```bash
 # Lista todos os discos e partições do sistema
@@ -264,9 +261,7 @@ sudo fdisk -l
 df -i
 ```
 
----
-
-## Parte 4 — Gerenciamento de Pacotes
+### Parte 4 — Gerenciamento de Pacotes
 
 Gerenciar pacotes significa instalar, atualizar e remover programas no Linux. O gerenciador varia conforme a distribuição.
 
@@ -276,7 +271,7 @@ Gerenciar pacotes significa instalar, atualizar e remover programas no Linux. O 
 | Amazon Linux 2023 | `dnf` | `sudo dnf install <pacote>` |
 | Ubuntu, Debian | `apt` | `sudo apt install <pacote>` |
 
-### 4.1 Operações essenciais com `dnf` (Amazon Linux 2023)
+#### 4.1 Operações essenciais com `dnf` (Amazon Linux 2023)
 
 ```bash
 # Atualiza a lista de pacotes disponíveis
@@ -304,7 +299,7 @@ dnf list installed
 sudo dnf clean all
 ```
 
-### 4.2 Repositórios no Amazon Linux 2023
+#### 4.2 Repositórios no Amazon Linux 2023
 
 No Amazon Linux 2023, o fluxo principal de instalação usa `dnf` diretamente (não há `amazon-linux-extras` como no AL2):
 
@@ -316,7 +311,7 @@ dnf repolist
 dnf module list
 ```
 
-### 4.3 Exercício prático — Instalar e verificar o Git
+#### 4.3 Exercício prático — Instalar e verificar o Git
 
 ```bash
 # Instala o Git
@@ -332,11 +327,9 @@ which git
 rpm -qi git
 ```
 
----
+### **Parte 5** — Redes e Segurança
 
-## Parte 5 — Redes e Segurança
-
-### 5.1 Diagnóstico de rede
+#### 5.1 Diagnóstico de rede
 
 ```bash
 # Exibe as interfaces de rede e seus endereços IP
@@ -367,7 +360,7 @@ dig google.com
 # (instalar: sudo dnf install bind-utils)
 ```
 
-### 5.2 Monitoramento de conexões de rede
+#### 5.2 Monitoramento de conexões de rede
 
 ```bash
 # Lista todas as conexões de rede ativas
@@ -384,7 +377,7 @@ ss -tnp state established
 sudo ss -tulnp | grep :80
 ```
 
-### 5.3 Firewall com `firewalld`
+#### 5.3 Firewall com `firewalld`
 
 O `firewalld` e o `nftables` podem ser usados no Amazon Linux 2023. Neste roteiro, usaremos `firewalld` por ser mais didático para iniciantes.
 
@@ -417,7 +410,7 @@ sudo firewall-cmd --reload
 !!! note "EC2 e Firewall"
     Em instâncias EC2, o tráfego é controlado primeiro pelo **Security Group** da AWS (no nível de VPC) e depois pelo firewall do sistema operacional. Ambos precisam permitir o tráfego para que uma conexão funcione.
 
-### 5.4 Gerenciamento de usuários e permissões
+#### 5.4 Gerenciamento de usuários e permissões
 
 ```bash
 # Cria um novo usuário
@@ -454,7 +447,7 @@ sudo userdel estudante
 sudo userdel -r estudante
 ```
 
-### 5.5 Hardening básico de SSH
+#### 5.5 Hardening básico de SSH
 
 O arquivo de configuração do SSH fica em `/etc/ssh/sshd_config`. Algumas práticas recomendadas:
 
@@ -493,7 +486,7 @@ sudo systemctl restart sshd
 
 ---
 
-## Resumo dos Comandos Essenciais
+### Resumo dos Comandos Essenciais
 
 | Categoria | Comando | Função |
 |---|---|---|
@@ -513,7 +506,7 @@ sudo systemctl restart sshd
 
 ---
 
-## Desafio Final
+### Desafio Final
 
 Coloque tudo em prática com este desafio integrado:
 
