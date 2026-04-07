@@ -1,8 +1,13 @@
-# Site com nginx na EC2 
+--- 
+id: nginx
+title: Nginx
+---  
+
+### Site com nginx na EC2 
 
 Roteiro para sair de uma instância EC2 limpa até o site HTML/CSS/JS no ar com Nginx, incluindo segurança mínima e comando de publicação.
 
-### 1. Criar/usar a instância EC2
+#### 1. Criar/usar a instância EC2
 
 - AMI: Amazon Linux (2 ou 2023).
 - Tipo: t2.micro/t3.micro (se couber no Free Tier).
@@ -16,7 +21,7 @@ Roteiro para sair de uma instância EC2 limpa até o site HTML/CSS/JS no ar com 
 ssh -i sua-chave.pem ec2-user@SEU_IP_PUBLICO
 ```
 
-### 2. Instalar e iniciar Nginx
+#### 2. Instalar e iniciar Nginx
 
 - Amazon Linux 2:
 
@@ -38,14 +43,14 @@ sudo systemctl start nginx
 sudo systemctl status nginx
 ```
 
-### 3. Criar pasta do site e permissões
+#### 3. Criar pasta do site e permissões
 
 ```bash
 sudo mkdir -p /var/www/meusite
 sudo chown -R ec2-user:ec2-user /var/www/meusite
 ```
 
-### 4. Subir seus arquivos HTML/CSS/JS
+#### 4. Subir seus arquivos HTML/CSS/JS
 
 - Do seu computador para a EC2 (exemplo com scp):
 
@@ -53,7 +58,7 @@ sudo chown -R ec2-user:ec2-user /var/www/meusite
 scp -i sua-chave.pem -r ./seu-projeto/* ec2-user@SEU_IP_PUBLICO:/var/www/meusite/
 ```
 
-### 5. Configurar virtual host no Nginx
+#### 5. Configurar virtual host no Nginx
 - Criar arquivo de configuração:
 
 ```bash
@@ -76,13 +81,16 @@ server {
 }
 EOF
 ```
+
 - Validar e recarregar:
+
 ```bash
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-### 6. Testar no navegador
+#### 6. Testar no navegador
+
 - Acesse:
 
 ```text
@@ -90,7 +98,7 @@ http://SEU_IP_PUBLICO
 ```
 - Se não abrir, revise Security Group (porta 80) e status do Nginx.
 
-### 7. (Opcional, recomendado) Domínio + HTTPS
+#### 7. (Opcional, recomendado) Domínio + HTTPS
 
 - Aponte DNS (A record) para o IP da EC2.
 - Instale Certbot e emita certificado LetsEncrypt.
